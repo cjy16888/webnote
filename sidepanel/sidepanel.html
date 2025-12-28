@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="webnote-panel">
+    <header class="panel-header">
+      <h1>WebNote</h1>
+      <span class="highlight-count">0 annotations</span>
+    </header>
+
+    <div class="page-info" id="pageInfo">
+      <span class="page-title"></span>
+    </div>
+
+    <div class="settings-bar">
+      <label class="toggle-setting">
+        <input type="checkbox" id="autoOpenToggle" checked>
+        <span class="toggle-label">高亮时自动打开面板</span>
+      </label>
+    </div>
+
+    <div class="highlight-list" id="highlightList"></div>
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📝</div>
+      <p>No annotations yet</p>
+      <p class="empty-hint">Select text on the page and click a color to highlight</p>
+    </div>
+
+    <div class="note-editor hidden" id="noteEditor">
+      <div class="editor-header">
+        <span class="selected-text" id="selectedText"></span>
+        <button class="close-btn" id="closeEditor">&times;</button>
+      </div>
+      <textarea class="note-input" id="noteInput" placeholder="Add a note..."></textarea>
+      <div class="editor-actions">
+        <button class="delete-btn" id="deleteBtn">Delete</button>
+        <button class="save-btn" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

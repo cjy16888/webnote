@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Icon Generator</title>
+</head>
+<body>
+  <h1>WebNote Icon Generator</h1>
+  <p>Save the canvas images below as icon16.png, icon48.png, icon128.png</p>
+  <canvas id="c16" width="16" height="16"></canvas>
+  <canvas id="c48" width="48" height="48"></canvas>
+  <canvas id="c128" width="128" height="128"></canvas>
+  <script>
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+      const s = size / 16;
+      ctx.fillStyle = '#03A9F4';
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, size * 0.15);
+      ctx.fill();
+      ctx.fillStyle = '#FFEB3B';
+      ctx.beginPath();
+      ctx.roundRect(s*2, s*3, s*12, s*2.5, s*0.5);
+      ctx.fill();
+      ctx.fillStyle = '#8BC34A';
+      ctx.beginPath();
+      ctx.roundRect(s*2, s*7, s*10, s*2.5, s*0.5);
+      ctx.fill();
+      ctx.fillStyle = '#E91E63';
+      ctx.beginPath();
+      ctx.roundRect(s*2, s*11, s*8, s*2.5, s*0.5);
+      ctx.fill();
+    }
+    drawIcon(document.getElementById('c16'), 16);
+    drawIcon(document.getElementById('c48'), 48);
+    drawIcon(document.getElementById('c128'), 128);
+  </script>
+</body>
+</html>

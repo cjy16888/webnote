@@ -1,0 +1,107 @@
+.webnote-toolbar {
+  position: fixed;
+  z-index: 2147483647;
+  display: none;
+  gap: 4px;
+  padding: 6px 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+
+.webnote-toolbar.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.webnote-toolbar-btn {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.1s;
+  padding: 0;
+  outline: none;
+}
+
+.webnote-toolbar-btn:hover {
+  transform: scale(1.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.webnote-toolbar-btn.yellow { background: #FFEB3B; }
+.webnote-toolbar-btn.green { background: #8BC34A; }
+.webnote-toolbar-btn.blue { background: #03A9F4; }
+.webnote-toolbar-btn.pink { background: #E91E63; }
+.webnote-toolbar-btn.purple { background: #9C27B0; }
+
+.webnote-highlight {
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 0 1px;
+  transition: filter 0.15s;
+}
+
+.webnote-highlight:hover {
+  filter: brightness(0.92);
+}
+
+.webnote-yellow { background-color: rgba(255, 235, 59, 0.5); }
+.webnote-green { background-color: rgba(139, 195, 74, 0.5); }
+.webnote-blue { background-color: rgba(3, 169, 244, 0.5); }
+.webnote-pink { background-color: rgba(233, 30, 99, 0.4); }
+.webnote-purple { background-color: rgba(156, 39, 176, 0.4); }
+
+@keyframes webnote-flash {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(0.8); }
+}
+
+.webnote-highlight-flash {
+  animation: webnote-flash 0.5s ease-in-out 3;
+}
+
+.webnote-tooltip {
+  position: fixed;
+  z-index: 2147483646;
+  max-width: 300px;
+  padding: 8px 12px;
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s, visibility 0.15s;
+  word-break: break-word;
+}
+
+.webnote-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.webnote-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+}
+
+.webnote-tooltip.above::after {
+  top: 100%;
+  border-top-color: #333;
+}
+
+.webnote-tooltip.below::after {
+  bottom: 100%;
+  border-bottom-color: #333;
+}
